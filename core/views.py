@@ -1,9 +1,6 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
-from django.conf import settings
 from .forms import ContactForm
 from .models import Project, Skill, Certification, Profile
-
 
 def home(request):
     projects = Project.objects.all()
@@ -20,17 +17,12 @@ def home(request):
             email = form.cleaned_data['email']
             message = form.cleaned_data['message']
 
-            # Send email
-            send_mail(
-                subject=f"Portfolio Contact from {name}",
-                message=f"Message from: {name} <{email}>\n\n{message}",
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                recipient_list=[settings.DEFAULT_FROM_EMAIL],
-                fail_silently=False,
-            )
-
-            form = ContactForm()  # Clear form after sending
+            # Temporary workaround for free PythonAnywhere account
+            # Print the message instead of sending email
+            print(f"Contact form submitted by {name} <{email}>: {message}")
             success = True
+
+            form = ContactForm()  # Clear form after "sending"
         else:
             success = False
     else:

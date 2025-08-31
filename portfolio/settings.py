@@ -120,31 +120,12 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/'
+# settings.py
 
-# Where collectstatic will put all static files for production
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-# (Optional) Your own static files (CSS, JS, images) during development
-STATICFILES_DIRS = [BASE_DIR / 'static']
-
-# Media files (uploads)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
-
-
-# Email Settings (Always send real emails with Gmail SMTP)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.pythonanywhere.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-
-# Use environment variables for safety, fallback to hardcoded values in development
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "rv1249367@gmail.com")
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "srok jjwi dyts kcyd")
-
-# Allowed hosts for PythonAnywhere
-ALLOWED_HOSTS = ['Rachna9885.pythonanywhere.com', 'www.Rachna9885.pythonanywhere.com']
-
-# Default "from" email
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_HOST_USER = 'Rachna9885'  # your PythonAnywhere username
+EMAIL_HOST_PASSWORD = 'your_pythonanywhere_password'  # your PA password
+DEFAULT_FROM_EMAIL = f'{EMAIL_HOST_USER}@pythonanywhere.com'
