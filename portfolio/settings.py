@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-rco2ogaw4d!j+6w(vccc4ji29v6pc(o6=jvkm&djo!ppcow_3w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -120,11 +120,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']       # for your CSS/JS/images
-MEDIA_URL = 'media/'
-MEDIA_ROOT = BASE_DIR / 'media'     
+STATIC_URL = '/static/'
 
+# Where collectstatic will put all static files for production
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# (Optional) Your own static files (CSS, JS, images) during development
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# Media files (uploads)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 
 # Email Settings (Always send real emails with Gmail SMTP)
@@ -136,8 +142,9 @@ EMAIL_USE_TLS = True
 # Use environment variables for safety, fallback to hardcoded values in development
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "rv1249367@gmail.com")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "srok jjwi dyts kcyd")
-ALLOWED_HOSTS = ['Rachna9885.pythonanywhere.com', 'www.Rachna9885.pythonanywhere.com']
 
+# Allowed hosts for PythonAnywhere
+ALLOWED_HOSTS = ['Rachna9885.pythonanywhere.com', 'www.Rachna9885.pythonanywhere.com']
 
 # Default "from" email
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
