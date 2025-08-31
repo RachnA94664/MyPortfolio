@@ -1,0 +1,65 @@
+/* static/css/site.css */
+:root {
+  --accent: #00ffcc;
+  --muted: #9aa3a6;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: #000;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* Accent */
+.text-accent { color: var(--accent) !important; }
+.btn-accent {
+  background: var(--accent);
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.05);
+}
+.btn-accent:hover { opacity: 0.9; }
+
+/* Profile image */
+.profile-img {
+  max-width: 260px;
+  border-radius: 50%;
+  border: 4px solid rgba(255,255,255,0.06);
+  object-fit: cover;
+}
+
+/* Skill pills (no percentages) */
+.skills span {
+  display: inline-block;
+  background: #0f0f10;
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.03);
+  margin: 6px;
+  cursor: default;
+  transition: transform .18s ease, background .18s ease, color .18s ease;
+}
+.skills span:hover {
+  transform: translateY(-6px);
+  background: var(--accent);
+  color: #000;
+}
+
+/* Cards */
+.card-ghost { border: 1px solid rgba(255,255,255,0.04); transition: transform .25s ease, box-shadow .25s ease; }
+.card-ghost:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.5); border-color: var(--accent); }
+
+/* Certifications links */
+.certifications a { color: var(--accent); text-decoration: none; font-weight: 500; }
+.certifications a:hover { color: #fff; text-decoration: underline; }
+
+/* Footer top border */
+.footer { border-top: 1px solid rgba(255,255,255,0.04); }
+
+/* Small responsive tweaks */
+@media (max-width: 767px) {
+  .profile-img { max-width: 180px; margin-bottom: 12px; }
+  .display-5 { font-size: 1.8rem; }
+}
